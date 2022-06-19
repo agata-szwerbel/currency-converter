@@ -8,7 +8,7 @@ html {
     box-sizing: inherit;
 }
 
-.site {
+.body {
     font-family: 'Poppins', sans-serif;
     background-color: hsl(53, 29%, 89%);
     max-width: 1000px;
