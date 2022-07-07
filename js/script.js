@@ -18,7 +18,9 @@
     }
     const updateResultText = (amount, result, currency) => {
         const resultElement = document.querySelector(".js-result");
-        resultElement.innerHTML = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+
+        resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+        
     }
 
     const onFormSubmit = (event) => {
@@ -26,8 +28,8 @@
         event.preventDefault();
 
         const amountElement = document.querySelector(".js-amount");
-        const currencyElement = document.querySelector(".js-currency");   
-          
+        const currencyElement = document.querySelector(".js-currency");
+
         const amount = +amountElement.value;
         const currency = currencyElement.value;
 
@@ -35,14 +37,17 @@
 
         updateResultText(amount, result, currency);
 
-        formElement.addEventListener("reset", () => {
-            resultElement.innerHTML = ``;
-        })
+        
     }
     const init = () => {
         const formElement = document.querySelector(".js-form");
 
         formElement.addEventListener("submit", onFormSubmit);
+        formElement.addEventListener("reset", () => {
+            resultElement.innerText = ``;
+        })
+
+       
     };
 
     init();
