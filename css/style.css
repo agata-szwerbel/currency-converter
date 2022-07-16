@@ -17,8 +17,8 @@ html {
     padding: 50px;
     background-image: url("../photo/background_photo.png");
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
     background-attachment: fixed;
 }
 

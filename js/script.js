@@ -18,9 +18,15 @@
     }
     const updateResultText = (amount, result, currency) => {
         const resultElement = document.querySelector(".js-result");
+        const resetButton = document.querySelector(".js-resetButton");
 
         resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
-        
+
+        resetButton.addEventListener("click", () => {
+            resultElement.innerText = ``;
+
+        })
+
     }
 
     const onFormSubmit = (event) => {
@@ -37,18 +43,17 @@
 
         updateResultText(amount, result, currency);
 
-        
     }
+
+
+
     const init = () => {
         const formElement = document.querySelector(".js-form");
 
         formElement.addEventListener("submit", onFormSubmit);
-        formElement.addEventListener("reset", () => {
-            resultElement.innerText = ``;
-        })
 
-       
     };
 
     init();
 }
+
